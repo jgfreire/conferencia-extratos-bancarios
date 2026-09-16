@@ -1,0 +1,63 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  background: #f2f4f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.login-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 36px;
+  width: 340px;
+}
+.login-box h1 {
+  font-size: 18px;
+  margin: 0 0 4px;
+  color: #1f2430;
+}
+.subtitle {
+  margin: 0 0 20px;
+  color: #667085;
+  font-size: 13px;
+}
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+  margin: 12px 0 4px;
+}
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+button[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #1a5c9c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button[type="submit"]:hover { background: #164d84; }
+.error-box {
+  background: #fdecea;
+  color: #b3261e;
+  border: 1px solid #f5c2c0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin: 12px 0 0;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conferência de Extratos Bancários</title>
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Conferência de Extratos Bancários</h1>
+    <nav class="topnav">
+      <button class="nav-btn" data-view="busca">Adicionar documento</button>
+      <button class="nav-btn" data-view="entregues">Extratos entregues</button>
+      <button class="nav-btn" data-view="usuarios">Cadastro de usuários</button>
+    </nav>
+    <div class="topbar-user">
+      <span id="session-user"></span>
+      <button id="btn-clear-delivered" class="btn-link btn-danger-link" title="Apaga todos os extratos entregues (a lista de empresas/bancos não é afetada) — use na virada do mês">Novo mês (excluir extratos)</button>
+      <button id="btn-logout" class="btn-link">Sair</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ADICIONAR DOCUMENTO -->
+    <section id="view-busca">
+      <div class="panel">
+        <h2>Buscar empresa</h2>
+        <input type="text" id="search-input" placeholder="Digite o nome ou o código da empresa..." class="search-box">
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <div id="company-docs" class="panel" hidden></div>
+    </section>
+
+    <!-- EXTRATOS ENTREGUES -->
+    <section id="view-entregues" hidden>
+      <div class="panel">
+        <h2>Extratos entregues</h2>
+        <div id="delivered-table"></div>
+      </div>
+    </section>
+
+    <!-- CADASTRO DE USUÁRIOS -->
+    <section id="view-usuarios" hidden>
+      <div class="panel">
+        <h2>Novo usuário</h2>
+        <form id="user-form">
+          <div class="field">
+            <label>Usuário</label>
+            <input type="text" id="new-username" required minlength="3">
+          </div>
+          <div class="field">
+            <label>Senha</label>
+            <input type="password" id="new-password" required minlength="6">
+          </div>
+          <p id="user-error" class="error-box" hidden></p>
+          <p id="user-success" class="success-box" hidden></p>
+          <button type="submit">Criar usuário</button>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Usuários cadastrados</h2>
+        <div id="users-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/authGuard.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/delivered.js"></script>
+  <script src="/js/users.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
